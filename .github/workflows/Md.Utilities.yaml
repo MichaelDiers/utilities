@@ -17,7 +17,7 @@ jobs:
   extract-version:
     uses: MichaelDiers/github-workflows/.github/workflows/dotnet-project-version.yaml@main
     with:
-      project-path: Md.Utilities/Md.Utilities/Md.Utilities-csproj
+      project-path: Md.Utilities/Md.Utilities/Md.Utilities.csproj
   print-version:
     runs-on: ubuntu-latest
     needs: extract-version
