@@ -6,10 +6,7 @@ on:
       - .github/workflows/Md.Utilities.yaml
   workflow_dispatch:
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      SOLUTION_DIRECTORY: utilities/Md.Utilities
+  build-and-test:
     uses: MichaelDiers/github-workflows/.github/workflows/dotnet-build-and-test.yaml@main
     with:
-      solution-directory: ${{env.SOLUTION_DIRECTORY}}
+      solution-directory: utilities/Md.Utilities
