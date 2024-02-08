@@ -14,9 +14,23 @@ jobs:
     with:
       project-name: Md.Utilities
       solution-directory: Md.Utilities
-  create-code-coverage-page:
-    needs: create-nuget
-    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-code-coverage-page.yaml@main
+  extract-version:
+    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-project-version.yaml@main
     with:
-      test-project-name: Md.Utilities.Test
-      solution-directory: Md.Utilities
+      project-path: Md.Utilities/Md.Utilities/Md.Utilities-csproj
+  print-version:
+    runs-on: ubuntu-latest
+    needs: extract-version
+    steps:
+      - run: |
+          echo ${{ needs.extract-version.outputs.version-xml }}
+          echo ${{ needs.extract-version.outputs.version }}
+          echo ${{ needs.extract-version.outputs.major }}
+          echo ${{ needs.extract-version.outputs.minor }}
+          echo ${{ needs.extract-version.outputs.patch }}
+  #create-code-coverage-page:
+  #  needs: create-nuget
+  #  uses: MichaelDiers/github-workflows/.github/workflows/dotnet-code-coverage-page.yaml@main
+  #  with:
+  #    test-project-name: Md.Utilities.Test
+  #    solution-directory: Md.Utilities
