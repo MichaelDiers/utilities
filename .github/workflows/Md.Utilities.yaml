@@ -9,8 +9,14 @@ permissions:
   contents: write
   packages: write
 jobs:
-  build-and-test:
+  create-nuget:
     uses: MichaelDiers/github-workflows/.github/workflows/dotnet-nuget.yaml@main
     with:
       project-name: Md.Utilities
+      solution-directory: Md.Utilities
+  create-code-coverage-page:
+    needs: create-nuget
+    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-code-coverage-page.yaml@main
+    with:
+      test-project-name: Md.Utilities.Test
       solution-directory: Md.Utilities
