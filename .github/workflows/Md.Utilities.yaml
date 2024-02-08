@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   packages: write
+  pages: write
 jobs:
   create-nuget:
     uses: MichaelDiers/github-workflows/.github/workflows/dotnet-nuget.yaml@main
