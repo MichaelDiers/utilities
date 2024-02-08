@@ -18,5 +18,6 @@ jobs:
     needs: create-nuget
     uses: MichaelDiers/github-workflows/.github/workflows/dotnet-code-coverage-page.yaml@main
     with:
+      project-name: Md.Utilities
       test-project-name: Md.Utilities.Test
       solution-directory: Md.Utilities
