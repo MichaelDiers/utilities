@@ -11,15 +11,9 @@ permissions:
   packages: write
   pages: write
 jobs:
-  create-nuget:
-    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-nuget.yaml@main
+  create-nuget-code-coverage-page:
+    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-nuget-code-coverage-page.yaml@main
     with:
       project-name: Md.Utilities
       solution-directory: Md.Utilities
-  create-code-coverage-page:
-    needs: create-nuget
-    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-code-coverage-page.yaml@main
-    with:
-      project-name: Md.Utilities
       test-project-name: Md.Utilities.Test
-      solution-directory: Md.Utilities
