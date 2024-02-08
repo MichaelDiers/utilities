@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SOLUTION_DIRECTORY: utilities/Md.Utilities
-    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-build-and-test@main
+    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-build-and-test.yaml@main
     with:
       solution-directory: ${{env.SOLUTION_DIRECTORY}}
