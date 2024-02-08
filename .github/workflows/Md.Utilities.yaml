@@ -2,7 +2,7 @@ name: Md.Utilities
 on:
   push:
     paths:
-      - utilities/Md.Utilities/**
+      - Md.Utilities/**
       - .github/workflows/Md.Utilities.yaml
   workflow_dispatch:
 jobs:
