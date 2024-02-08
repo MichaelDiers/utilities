@@ -1,0 +1,15 @@
+name: Md.Utilities
+on:
+  push:
+    paths:
+      - utilities/Md.Utilities/**
+      - .github/workflows/Md.Utilities.yaml
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SOLUTION_DIRECTORY: utilities/Md.Utilities
+    uses: MichaelDiers/github-workflows/.github/workflows/dotnet-build-and-test@main
+    with:
+      solution-directory: ${{env.SOLUTION_DIRECTORY}}
