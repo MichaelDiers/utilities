@@ -5,6 +5,9 @@ on:
       - Md.Utilities/**
       - .github/workflows/Md.Utilities.yaml
   workflow_dispatch:
+permissions:
+  contents: write
+  packages: write
 jobs:
   build-and-test:
     uses: MichaelDiers/github-workflows/.github/workflows/dotnet-nuget.yaml@main
